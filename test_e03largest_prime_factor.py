@@ -4,7 +4,15 @@ Tests for Project Euler #3: Largest Prime Factor
 
 
 from __future__ import (absolute_import,)
-from e03largest_prime_factor import is_prime, lpf
+from e03largest_prime_factor import next_prime, is_prime, lpf
+
+
+def test_next_prime():
+    '''Test that next prime is correct'''
+
+    assert next_prime(2) == 3
+    assert next_prime(3) == 5
+    assert not next_prime(3) == 4
 
 
 def test_is_prime():

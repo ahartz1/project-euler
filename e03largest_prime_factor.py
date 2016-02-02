@@ -8,18 +8,53 @@ from __future__ import (print_function,)
 def lpf(n):
     '''Returns the largest prime factor of n for n > 1'''
 
-    if is_prime(n):
-        return n
+    # Idea: Build up list of primes, if a factor is found, reset the range
+    # e.g.: 100 / 2 = 50, 50 / 2 = 25, 25 / 5 = 5 done; 5 iterations total
 
-    # Start at large end of range, working toward 1
-    for i in range(n - 1, 0, -1):
+    primes_lt_n = [2]
+    largest_prime = 1
+    loop_n = n
 
-        # if our number is divisible by i, check to see if i is prime
-        if n % i == 0:
-            if is_prime(i):
-                return i
-        if i == 1:
-            return 1
+    while True:
+        # Try to reduce n by dividing by primes until largest prime factor is
+        # found
+        for loop_count, i in enumerate(primes_lt_n):
+
+            # if loop_n divisible by i, update loop_n value to loop_n / i
+            if loop_n % i == 0:
+                loop_n = loop_n / i
+
+                # check if i is the largest prime found, if so, update
+                # largest_prime
+                if i > largest_prime:
+                    largest_prime = i
+
+                # Restart the for loop
+                break
+
+            # End of current loop processing
+            if loop_count == len(primes_lt_n) - 1:
+
+                # Check for end condition where last prime is greater than
+                # loop_n.  If the last prime tried is larger than loop_n, then
+                # our largest factor is known.
+                if primes_lt_n[-1] > loop_n:
+                    return largest_prime
+
+                # If we got this far, none of the primes tried are factors, so
+                # remove them all and restart the for loop with just the next
+                # prime
+                test_prime = next_prime(primes_lt_n[-1])
+                primes_lt_n = [test_prime]
+                break
+
+
+def next_prime(m):
+    '''Generate next prime'''
+    while True:
+        m += 1
+        if is_prime(m):
+            return m
 
 
 def is_prime(m):
@@ -31,4 +66,3 @@ def is_prime(m):
 
 if __name__ == '__main__':
     print('Largest common factor of 600851475143: {}'.format(lpf(600851475143)))
-    # print('Largest common factor of 13195: {}'.format(lpf(13195)))
