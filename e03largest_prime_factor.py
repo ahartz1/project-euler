@@ -1,5 +1,5 @@
 """
-Project Euler problem #3: Largest Prime Factor
+Project Euler Problem #3: Largest Prime Factor
 """
 
 from __future__ import (print_function,)
@@ -58,11 +58,12 @@ def next_prime(m):
 
 
 def is_prime(m):
-    '''determine if m is prime'''
+    '''Determine if m is prime'''
     for i in range(m - 1, 1, -1):
         if m % i == 0:
             return False
     return True
 
 if __name__ == '__main__':
-    print('Largest common factor of 600851475143: {}'.format(lpf(600851475143)))
+    euler_num = 600851475143
+    print('Largest common factor of {}: {}'.format(euler_num, lpf(euler_num)))
