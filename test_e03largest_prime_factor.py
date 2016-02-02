@@ -11,6 +11,9 @@ def test_is_prime():
     '''Test that prime test is correct'''
 
     assert is_prime(2) == True
+    assert is_prime(4) == False
+    assert is_prime(13) == True
+    assert is_prime(9) == False
 
 
 def test_largest_prime_factor():
