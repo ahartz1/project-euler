@@ -1,15 +1,15 @@
-"""Project Euler Problem #4: Largest Palindrome Product"""
+"""
+Project Euler Problem #4: Largest Palindrome Product
+"""
 
 
 def lgst_pal(n):
-    """
-    This function is meant to determine the largest palindrome number created
-    from the product of 2 n-digit-long numbers.
-    """
+    '''This function is meant to determine the largest palindrome number created
+    from the product of 2 n-digit-long numbers'''
 
     # Start by finding the largest and smallest n-digit num products
     largest = int('9' * n) ** 2
-    smallest = int(str('1' + ('0' * (n - 1)))) ** 2
+    smallest = int('1' + ('0' * (n - 1))) ** 2
 
     # Go through possible range, test for palindrome, then test for divisiblity
     for i in range(largest, smallest - 1, -1):
