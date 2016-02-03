@@ -1,4 +1,6 @@
-"""Tests for Project Euler Problem #4: Largest Palindrome Product"""
+"""
+Tests for Project Euler Problem #4: Largest Palindrome Product
+"""
 
 
 from e04largest_palindrome import check_n_digit_div, is_palindrome, lgst_pal
