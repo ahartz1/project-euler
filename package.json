@@ -1,12 +1,12 @@
 {
-  "name": "tiy-coding-dojo",
-  "version": "0.0.0",
+  "name": "project-euler",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "mocha tests.js"
   },
-  "author": "durham@theironyard.com",
+  "author": "ahartz1@gmail.com",
   "license": "GPL-3.0",
   "devDependencies": {
     "chai": "^3.3.0",
