@@ -6,8 +6,8 @@ from __future__ import (print_function,)
 
 
 def sum_square_diff(n):
-    '''Return the difference of the sum of squares from 1–n and the square of
-    the sum 1–n'''
+    '''Return the difference of the sum of squares from 1-n and the square of
+    the sum 1-n'''
 
     # Aggregate as we go
     sum_of_squares = 0

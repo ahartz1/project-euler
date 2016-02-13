@@ -17,18 +17,18 @@ def test_is_prime():
 
 
 def test_1_to_2_smallest_multiple():
-    '''Test the 1–2 case'''
+    '''Test the 1-2 case'''
 
     assert smallest_multiple(2) == 2
 
 
 def test_1_to_6_smallest_multiple():
-    '''Test the 1–6 case (2 * 2 * 3 * 5)'''
+    '''Test the 1-6 case (2 * 2 * 3 * 5)'''
 
     assert smallest_multiple(6) == 60
 
 
 def test_1_to_10_smallest_multiple():
-    '''Test the known 1–10 case'''
+    '''Test the known 1-10 case'''
 
     assert smallest_multiple(10) == 2520
