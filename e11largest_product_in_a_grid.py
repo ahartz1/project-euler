@@ -33,6 +33,10 @@ class InsufficientGridSizeError(Exception):
     pass
 
 
+class InconsistentGridError(Exception):
+    pass
+
+
 def largest_grid_product(raw_grid, n):
     '''Return the largest product of any n adjacent numbers in grid; can be
     vertical, horizontal, or diagonal'''
@@ -48,6 +52,11 @@ def largest_grid_product(raw_grid, n):
     if height < n and width < n:
         raise InsufficientGridSizeError
 
+    # Raise error if rows are not of same length
+    for row in g:
+        if len(row) != width:
+            raise InconsistentGridError
+
     max_row_prod = largest_row_product(g, n)
     max_col_prod = largest_column_product(g, n)
     max_l_diag_prod = largest_left_diag_product(g, n)
@@ -57,6 +66,8 @@ def largest_grid_product(raw_grid, n):
 
 
 def set_grid(raw_grid):
+    '''Convert string with line breaks into 2-dimensional array'''
+
     raw_rows = raw_grid.split('\n')
     g = list()
     for row in raw_rows:
@@ -66,10 +77,15 @@ def set_grid(raw_grid):
 
 
 def largest_row_product(grid, n):
+    '''Return largest product of n adjacent numbers in grid rows'''
+
     height = len(grid)
     width = len(grid[0])
     ret = 0
+
+    # i controls the row
     for i in range(height):
+        # j controls the starting column
         for j in range(width - n + 1):
             local_product = 1
             for k in range(n):
@@ -80,10 +96,14 @@ def largest_row_product(grid, n):
 
 
 def largest_column_product(grid, n):
+    '''Return largest product of n adjacent numbers in grid columns'''
+
     height = len(grid)
     width = len(grid[0])
     ret = 0
+    # i controls the column
     for i in range(height):
+        # j controls the starting row
         for j in range(width - n + 1):
             local_product = 1
             for k in range(n):
@@ -94,10 +114,16 @@ def largest_column_product(grid, n):
 
 
 def largest_left_diag_product(grid, n):
+    '''Return largest product of n adjacent numbers in grid left diagonals
+
+    Add k offset to both rows and columns'''
+
     height = len(grid)
     width = len(grid[0])
     ret = 0
+    # i relates to starting row
     for i in range(height - n + 1):
+        # j relates to starting column
         for j in range(width - n + 1):
             local_product = 1
             for k in range(n):
@@ -108,10 +134,16 @@ def largest_left_diag_product(grid, n):
 
 
 def largest_right_diag_product(grid, n):
+    '''Return largest product of n adjacent numbers in grid of right diagonals
+
+    Subtract k offset from (largest calculated) rows, add k offset to columns'''
+
     height = len(grid)
     width = len(grid[0])
     ret = 0
+    # i relates to starting row
     for i in range(height - n + 1):
+        # j relates to starting column
         for j in range(width - n + 1):
             local_product = 1
             for k in range(n):

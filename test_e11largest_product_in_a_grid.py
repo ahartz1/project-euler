@@ -5,6 +5,7 @@ Tests for Project Euler #11: Largest Product in a Grid
 from __future__ import (absolute_import)
 from nose.tools import raises
 from e11largest_product_in_a_grid import InsufficientGridSizeError
+from e11largest_product_in_a_grid import InconsistentGridError
 from e11largest_product_in_a_grid import set_grid
 from e11largest_product_in_a_grid import largest_grid_product
 from e11largest_product_in_a_grid import largest_row_product
@@ -22,11 +23,27 @@ TEST_GRID = """
 """
 
 
+FAIL_GRID = """
+02 01 02 02 01
+02 02 01 05 01
+02 01 01 05 01
+03 01 02 05
+01 12 01 01 01
+"""
+
+
 @raises(InsufficientGridSizeError)
 def test_exception_raised_if_grid_smaller_than_n():
     '''Should raise the InsufficientGridSizeError exception'''
 
     largest_grid_product(TEST_GRID, 6)
+
+
+@raises(InconsistentGridError)
+def test_exception_raised_if_grid_rows_different_lengths():
+    '''Should raise the InconsistentGridError exception'''
+
+    largest_grid_product(FAIL_GRID, 2)
 
 
 def test_largest_row_product():
