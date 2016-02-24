@@ -1,7 +1,7 @@
 var test = require('mocha').it,
     expect = require('chai').expect,
     assert = require('chai').assert,
-    main = require('./e13large_sum.js');
+    main = require('../e13large_sum.js');
 
 const TEST_NUMS = `
 123456789012

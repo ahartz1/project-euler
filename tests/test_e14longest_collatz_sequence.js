@@ -1,7 +1,7 @@
 var test = require('mocha').it,
     expect = require('chai').expect,
     assert = require('chai').assert,
-    main = require('./e14longest_collatz_sequence.js');
+    main = require('../e14longest_collatz_sequence.js');
 
 test('collatzSequenceLength', function() {
   expect(main.collatzSequenceLength).is.a('function');
