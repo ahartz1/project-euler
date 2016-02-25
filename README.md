@@ -10,15 +10,15 @@ There are tests associated with the solutions in each language's `tests` subfold
 ### Running the Code
 
 Python:
- * `$ cd python` to get into the python directory
- * Create a python virtual environment of your choice (direnv, virtualenv, etc.). Compatible with Python 2 and Python 3.
+ * `$ cd python`
+ * Create a python virtual environment of your choice (direnv, virtualenv, etc.). Code is compatible with Python 2 and Python 3.
  * `$ pip install -r requirements.txt`
  * To run code: `$ python [filename.py]`
  * To run tests: `$ nosetests`
 
 
 JavaScript:
- * `$ cd js` to get into the js directory
+ * `$ cd js`
  * Requires [node](https://nodejs.org/) to be installed
  * Running tests requires [npm](https://www.npmjs.com/) to be installed
    * Once installed, run `$ npm install` to install `package.json`
@@ -27,8 +27,9 @@ JavaScript:
 
 
 PHP:
- * `$ cd php` to get into the php directory
+ * `$ cd php`
  * Requires PHP56
  * Tests require [composer](https://getcomposer.org/download/); download into `php` directory
+   * Once installed, run `$ php composer.phar install` to install `composer.lock`
  * To run code: `$ php src/[filename.php]`
  * To run individual tests: `$ phpunit tests/[test_filename.php]`
