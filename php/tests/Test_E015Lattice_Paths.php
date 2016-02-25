@@ -1,7 +1,6 @@
 <?php
 // Tests for Project Euler #15 Lattice Paths
 
-// require_once(realpath(dirname(__FILE__)) . "/../src/E015LatticePaths.php");
 
 class TestNumLatticePaths extends PHPUnit_Framework_TestCase
 {
