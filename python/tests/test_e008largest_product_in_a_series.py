@@ -3,7 +3,7 @@ Tests for Project Euler Problem #8: Largest Product in a Series
 """
 
 from __future__ import (absolute_import)
-from e08largest_product_in_a_series import largest_product_in_a_series
+from e008largest_product_in_a_series import largest_product_in_a_series
 
 
 euler_series = '''

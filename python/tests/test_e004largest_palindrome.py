@@ -3,7 +3,7 @@ Tests for Project Euler Problem #4: Largest Palindrome Product
 """
 
 
-from e04largest_palindrome import check_n_digit_div, is_palindrome, lgst_pal
+from e004largest_palindrome import check_n_digit_div, is_palindrome, lgst_pal
 
 
 def test_check_n_digit_div():

@@ -3,7 +3,7 @@ Tests for Project Euler #2: Even Fibonacci Numbers
 """
 
 from __future__ import (absolute_import,)
-from e02even_fibonacci import even_fibonacci_sum
+from e002even_fibonacci import even_fibonacci_sum
 
 
 def test_even_fibonacci_sum():

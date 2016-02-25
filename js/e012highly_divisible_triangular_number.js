@@ -28,5 +28,8 @@
     return tri;
   }  // end of triangularDivisors
   // console.log(triangularDivisors(500));
-  console.log('For n of 500, answer = 76576500 (took ~30 min to calculate!)')
 })();
+
+if (require.main === module) {
+  console.log('For n of 500, answer = 76576500 (took ~30 min to calculate!)')
+}

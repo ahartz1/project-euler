@@ -3,7 +3,7 @@ Tests for Project Euler Problem #5: Smallest Multiple
 """
 
 from __future__ import (absolute_import)
-from e05smallest_multiple import smallest_multiple, is_prime
+from e005smallest_multiple import smallest_multiple, is_prime
 
 
 def test_is_prime():

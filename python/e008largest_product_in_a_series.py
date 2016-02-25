@@ -44,7 +44,6 @@ def largest_product_in_a_series(n, series):
     for substr in sub_series:
         if len(substr) >= n:
             working_list.append(substr)
-    print(working_list)
 
     if len(working_list) == 0:
         return 'No {}-number subsets without a zero'.format(n)
@@ -61,7 +60,6 @@ def largest_product_in_a_series(n, series):
                 largest_product = sub_s_prod
                 largest_substring = s[i:i + n]
 
-    print(largest_substring)
     return largest_product
 
 

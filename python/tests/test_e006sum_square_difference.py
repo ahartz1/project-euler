@@ -3,7 +3,7 @@ Tests for Project Euler Problem #6: Sum Square Difference
 """
 
 from __future__ import (absolute_import)
-from e06sum_square_difference import sum_square_diff
+from e006sum_square_difference import sum_square_diff
 
 
 def test_sum_square_diff_3():

@@ -15,5 +15,8 @@
     }
     return sum;
   }
-  console.log(sumOf3sAnd5s(1000));
 })();
+
+if (require.main === module) {
+  console.log(sumOf3sAnd5s(1000));
+}

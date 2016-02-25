@@ -1,7 +1,7 @@
 var test = require('mocha').it,
     expect = require('chai').expect,
     assert = require('chai').assert,
-    main = require('../e12highly_divisible_triangular_number.js');
+    main = require('../e012highly_divisible_triangular_number.js');
 
 test('triangularDivisors', function() {
   expect(main.triangularDivisors).is.a('function');

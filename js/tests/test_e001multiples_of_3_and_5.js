@@ -1,7 +1,7 @@
 var test = require('mocha').it,
     expect = require('chai').expect,
     assert = require('chai').assert,
-    main = require('../e01multiples_of_3_and_5.js');
+    main = require('../e001multiples_of_3_and_5.js');
 
 test('sumOf3sAnd5s', function(){
   expect(main.sumOf3sAnd5s).is.a('function');

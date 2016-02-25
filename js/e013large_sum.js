@@ -129,5 +129,8 @@
 
     return parseInt(sum);
   }  // end of largeSum
-  console.log(largeSum(EULER_NUMS));
 })();
+
+if (require.main === module) {
+  console.log(largeSum(EULER_NUMS));
+}

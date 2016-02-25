@@ -5,8 +5,9 @@
 // the limits of regular ints are exceeded, so bcpow is used here to achieve
 // arbitrary precision.
 
+namespace Euler;
 
-class e16Power_Digit_Sum
+class E016Power_Digit_Sum
 {
     public function powerDigitSum($n) {
         $pow = bcpow(2, $n);
@@ -22,7 +23,7 @@ class e16Power_Digit_Sum
 if (!count(debug_backtrace())) {
     $eulerNum = 1000;
     $eulerPow = pow(2, $eulerNum);
-    $p = new e16Power_Digit_Sum();
+    $p = new E016Power_Digit_Sum();
     echo "2^{$eulerNum} = {$eulerPow}\n";
     echo "Sum of digits = {$p->powerDigitSum($eulerNum)}\n";
 }

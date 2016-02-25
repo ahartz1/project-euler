@@ -7,7 +7,7 @@ class TestPowerDigitSum extends PHPUnit_Framework_TestCase
     protected $p;
 
     protected function setUp() {
-        $this->p = new e16Power_Digit_Sum();
+        $this->p = new Euler\E016Power_Digit_Sum();
     }
 
     public function test2ToThe4() {

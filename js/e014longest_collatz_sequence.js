@@ -45,7 +45,10 @@
 
     return ret
   }  // end of longestCollatzSequence
+})();
+
+if (require.main === module) {
   var numWithLongestCollatz = longestCollatzSequence(1000000);
   console.log('Num with longest: %d, with Collatz sequence length of: %d',
       numWithLongestCollatz, collatzSequenceLength(numWithLongestCollatz));
-})();
+}

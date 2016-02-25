@@ -4,7 +4,7 @@ Tests for Project Euler #9: Special Pythagorean Triplet
 
 
 from __future__ import (absolute_import)
-from e09special_pythagorean_triplet import special_pythagorean_triplet
+from e009special_pythagorean_triplet import special_pythagorean_triplet
 
 
 def test_known_special_pythagorean_triplet():

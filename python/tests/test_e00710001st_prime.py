@@ -3,7 +3,7 @@ Tests for Project Euler Problem #7: 10,001st Prime
 """
 
 from __future__ import (absolute_import)
-from e0710001st_prime import nth_prime, is_prime
+from e00710001st_prime import nth_prime, is_prime
 
 
 def test_is_prime():

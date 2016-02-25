@@ -3,7 +3,9 @@
 // Find the number of paths from the top left to the bottom right of a grid
 // of dimension width x height.
 
-class e15Lattice_Paths
+namespace Euler;
+
+class E015Lattice_Paths
 {
     public $pathHolder = array();
 
@@ -48,7 +50,7 @@ class e15Lattice_Paths
 if (!count(debug_backtrace())) {
     $eulerWidth = 20;
     $eulerHeight = 20;
-    $euler = new e15Lattice_Paths();
+    $euler = new E015Lattice_Paths();
     echo "Number of lattice paths in " . $eulerWidth . "x" . $eulerHeight
         . " grid: " . $euler->numLatticePaths($eulerWidth, $eulerHeight) . "\n";
 }

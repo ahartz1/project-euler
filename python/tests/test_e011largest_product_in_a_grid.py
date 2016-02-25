@@ -4,14 +4,14 @@ Tests for Project Euler #11: Largest Product in a Grid
 
 from __future__ import (absolute_import)
 from nose.tools import raises
-from e11largest_product_in_a_grid import InsufficientGridSizeError
-from e11largest_product_in_a_grid import InconsistentGridError
-from e11largest_product_in_a_grid import set_grid
-from e11largest_product_in_a_grid import largest_grid_product
-from e11largest_product_in_a_grid import largest_row_product
-from e11largest_product_in_a_grid import largest_column_product
-from e11largest_product_in_a_grid import largest_left_diag_product
-from e11largest_product_in_a_grid import largest_right_diag_product
+from e011largest_product_in_a_grid import InsufficientGridSizeError
+from e011largest_product_in_a_grid import InconsistentGridError
+from e011largest_product_in_a_grid import set_grid
+from e011largest_product_in_a_grid import largest_grid_product
+from e011largest_product_in_a_grid import largest_row_product
+from e011largest_product_in_a_grid import largest_column_product
+from e011largest_product_in_a_grid import largest_left_diag_product
+from e011largest_product_in_a_grid import largest_right_diag_product
 
 
 TEST_GRID = """
