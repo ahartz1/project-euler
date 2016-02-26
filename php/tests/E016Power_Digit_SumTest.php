@@ -2,7 +2,7 @@
 // Tests for Euler #16 Power Digit Sum
 
 
-class TestPowerDigitSum extends PHPUnit_Framework_TestCase
+class PowerDigitSumTest extends PHPUnit_Framework_TestCase
 {
     protected $p;
 

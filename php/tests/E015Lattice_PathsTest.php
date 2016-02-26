@@ -2,7 +2,7 @@
 // Tests for Project Euler #15 Lattice Paths
 
 
-class TestNumLatticePaths extends PHPUnit_Framework_TestCase
+class NumLatticePathsTest extends PHPUnit_Framework_TestCase
 {
     protected $euler;
 
