@@ -23,7 +23,7 @@ JavaScript:
  * Running tests requires [npm](https://www.npmjs.com/) to be installed
    * Once installed, run `$ npm install` to install `package.json`
  * To run code: `$ node [filename.js]`
- * To run tests: `$ ./node_packages/mocha/bin/mocha tests/`
+ * To run tests: `$ ./node_packages/mocha/bin/mocha tests`
 
 
 PHP:
@@ -32,4 +32,4 @@ PHP:
  * Tests require [composer](https://getcomposer.org/download/); download into `php` directory
    * Once installed, run `$ php composer.phar install` to install `composer.lock`
  * To run code: `$ php src/[filename.php]`
- * To run individual tests: `$ phpunit tests/[test_filename.php]`
+ * To run tests: `$ phpunit tests`
