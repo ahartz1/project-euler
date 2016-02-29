@@ -12,9 +12,9 @@ namespace Euler;
 
 class E017NumberLetterCounts
 {
-    private $ones = [3, 3, 5, 4, 4, 3, 5, 5, 4, 3, 6, 6, 8, 8, 7, 7, 9, 8, 8];
-    private $tenNinety = [3, 6, 6, 5, 5, 5, 7, 6, 5];
-    private $suffixes = [0, 8, 7, 7, 8];
+    const ONES = [3, 3, 5, 4, 4, 3, 5, 5, 4, 3, 6, 6, 8, 8, 7, 7, 9, 8, 8];
+    const TEN_NINETY = [3, 6, 6, 5, 5, 5, 7, 6, 5];
+    const SUFFIXES = [0, 8, 7, 7, 8];
 
     public function numberLetterCounts($n)
     {
@@ -65,17 +65,13 @@ class E017NumberLetterCounts
          * $suffixes represent something added to each number (e.g., 'billion')
          */
 
-        $ones = [3, 3, 5, 4, 4, 3, 5, 5, 4, 3, 6, 6, 8, 8, 7, 7, 9, 8, 8];
-        $tenNinety = [3, 6, 6, 5, 5, 5, 7, 6, 5];
-        $suffixes = [0, 8, 7, 7, 8];
-
         if ($n === 0) {
             return 0;
         }
 
         // Check if $n is an even hundred
         if ($n % 100 === 0) {
-            return $this->ones[($n / 100) - 1] + 7 + $this->suffixes[$suffix];
+            return self::ONES[($n / 100) - 1] + 7 + self::SUFFIXES[$suffix];
         }
 
         $ret = 0;
@@ -90,7 +86,7 @@ class E017NumberLetterCounts
                 if ($suffix === 0 && $big) {
                     $ret += 3;
                 }
-                $ret += $this->ones[($n % 100) - 1];
+                $ret += self::ONES[($n % 100) - 1];
                 $j++;
                 continue;
             }
@@ -101,7 +97,7 @@ class E017NumberLetterCounts
                 if ($suffix === 0 && $big) {
                     $ret += 3;
                 }
-                $ret += $this->tenNinety[$nAsRevString[$j + 1] - 1];
+                $ret += self::TEN_NINETY[$nAsRevString[$j + 1] - 1];
                 $j++;
                 continue;
             }
@@ -110,19 +106,19 @@ class E017NumberLetterCounts
 
             switch ($j): 
                 case 0:
-                    $ret += $this->ones[$jNum - 1];
+                    $ret += self::ONES[$jNum - 1];
                     continue;
                 case 1:
                     if ($suffix === 0 && $big) {
                         $ret += 3;
                     }
-                    $ret += $this->tenNinety[$jNum - 1];
+                    $ret += self::TEN_NINETY[$jNum - 1];
                     continue;
                 case 2:
-                    $ret += $this->ones[$jNum - 1] + 7;
+                    $ret += self::ONES[$jNum - 1] + 7;
             endswitch;
         }
-        return $ret + $this->suffixes[$suffix];
+        return $ret + self::SUFFIXES[$suffix];
     }
 }
 
