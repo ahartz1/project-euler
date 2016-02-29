@@ -4,7 +4,8 @@
  *
  * Sum the number of letters used to write each number between 1 and n in
  * English. (e.g., 342 [three hundred and forty-two] contains 23 letters)
- * Spaces and hyphens do not count. ONLY SUPPORTED UP TO 9999.
+ * Spaces and hyphens do not count. Supported up to 999,999,999,999,999, but
+ * not optimized to return in reasonable time.
  */
 
 namespace Euler;
