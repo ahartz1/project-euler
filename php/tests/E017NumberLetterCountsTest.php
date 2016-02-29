@@ -4,66 +4,31 @@
 
 class NumberLetterCountsTest extends PHPUnit_Framework_TestCase
 {
-    protected $p;
 
-    protected function setUp()
+    /**
+     * @param int $n Number up to which we want letter counts
+     * @param int $expectedSum What letter count we expect
+     *
+     * @dataProvider providerTestNumberLetterCounts
+     */
+    public function testNumberLetterCounts($n, $expectedSum)
     {
-        $this->p = new Euler\E017NumberLetterCounts();
+        $euler = new Euler\E017NumberLetterCounts();
+
+        $result = $euler->numberLetterCounts($n);
+
+        $this->assertEquals($result, $expectedSum);
     }
 
-    public function testUpTo1()
+    public function providerTestNumberLetterCounts()
     {
-        // Arrange (taken care of in setUp)
-
-        // Act
-        $sum = $this->p->numberLetterCounts(1);
-
-        // Assert
-        $this->assertEquals(3, $sum);
-    }
-
-    public function testUpTo5()
-    {
-        // Arrange (taken care of in setUp)
-
-        // Act
-        $sum = $this->p->numberLetterCounts(5);
-
-        // Assert
-        $this->assertEquals(19, $sum);
-    }
-
-    public function testUpTo20()
-    {
-        // Arrange (taken care of in setUp)
-
-        // Act
-        $sum = $this->p->numberLetterCounts(20);
-
-        // Assert
-        $this->assertEquals(112, $sum);
-    }
-
-    public function testUpTo21()
-    {
-        // Arrange (taken care of in setUp)
-
-        // Act
-        $sum = $this->p->numberLetterCounts(21);
-
-        // Assert
-        $this->assertEquals(121, $sum);
-    }
-
-    public function testUpTo101()
-    {
-        // Arrange (taken care of in setUp)
-
-        // Act
-        $sum = $this->p->numberLetterCounts(101);
-
-        // Assert
-        $this->assertEquals(870, $sum);
+        return array(
+            array(1,   3),
+            array(5,   19),
+            array(20,  112),
+            array(21,  121),
+            array(101, 870)
+        );
     }
 }
 
