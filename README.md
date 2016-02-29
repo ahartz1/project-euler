@@ -32,4 +32,4 @@ PHP:
  * Tests require [composer](https://getcomposer.org/download/); download into `php` directory
    * Once installed, run `$ php composer.phar install` to install `composer.lock`
  * To run code: `$ php src/[filename.php]`
- * To run tests: `$ ./vendor/bin/phpunit tests`
+ * To run tests: `$ ./vendor/bin/phpunit`
