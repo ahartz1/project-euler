@@ -6,11 +6,13 @@ class NumberLetterCountsTest extends PHPUnit_Framework_TestCase
 {
     protected $p;
 
-    protected function setUp() {
+    protected function setUp()
+    {
         $this->p = new Euler\E017NumberLetterCounts();
     }
 
-    public function testUpTo1() {
+    public function testUpTo1()
+    {
         // Arrange (taken care of in setUp)
 
         // Act
@@ -20,7 +22,8 @@ class NumberLetterCountsTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(3, $sum);
     }
 
-    public function testUpTo5() {
+    public function testUpTo5()
+    {
         // Arrange (taken care of in setUp)
 
         // Act
@@ -30,7 +33,8 @@ class NumberLetterCountsTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(19, $sum);
     }
 
-    public function testUpTo20() {
+    public function testUpTo20()
+    {
         // Arrange (taken care of in setUp)
 
         // Act
@@ -40,14 +44,26 @@ class NumberLetterCountsTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(112, $sum);
     }
 
-    public function testUpTo21() {
+    public function testUpTo21()
+    {
         // Arrange (taken care of in setUp)
 
         // Act
         $sum = $this->p->numberLetterCounts(21);
 
         // Assert
-        $this->assertEquals(115, $sum);
+        $this->assertEquals(121, $sum);
+    }
+
+    public function testUpTo101()
+    {
+        // Arrange (taken care of in setUp)
+
+        // Act
+        $sum = $this->p->numberLetterCounts(101);
+
+        // Assert
+        $this->assertEquals(870, $sum);
     }
 }
 
