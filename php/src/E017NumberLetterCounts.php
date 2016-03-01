@@ -12,18 +12,32 @@ namespace Euler;
 
 class E017NumberLetterCounts
 {
+    /*
+     * Arrays containing letter counts:
+     *
+     * ONES starts at 'one' and goes through 'nineteen', by 1s
+     * (position in array is value - 1)
+     *
+     * TENNINETY starts at 'ten' and goes through 'ninety', by 10s
+     * (position in array is tens digit - 1)
+     *
+     * SUFFIXES represent something added to each number (e.g., 'billion')
+     */
     const ONES = [3, 3, 5, 4, 4, 3, 5, 5, 4, 3, 6, 6, 8, 8, 7, 7, 9, 8, 8];
     const TEN_NINETY = [3, 6, 6, 5, 5, 5, 7, 6, 5];
     const SUFFIXES = [0, 8, 7, 7, 8];
 
+    /**
+     * Main function to sum results; relies on singleNumberHundreds
+     *
+     * Loop through all numbers 1-n, chunking each number into 3-digit
+     * groups and sending each to singleNumberHundreds and summing the
+     * results
+     *
+     * @param int $n The number up to which we are to count the letters
+     */
     public function numberLetterCounts($n)
     {
-        /**
-         * Loop through all numbers 1-n, chunking each number into 3-digit
-         * groups and sending each to singleNumberHundreds and summing the
-         * results
-         */
-
         $ret = 0;
 
         for ($i = 1; $i <= $n; $i++) {
@@ -45,26 +59,21 @@ class E017NumberLetterCounts
         return $ret;
     }
 
+    /**
+     * Helper function that returns sum of 3 digits at a time
+     *
+     * This function is responsible for returning the count of any 3-digit
+     * number letter total, with a given suffix degree. Suffix degree 0
+     * adds nothing to each total, but adds 'and' between hundreds (if
+     * present) and last two digits. Suffix degree 1 adds 'thousand', 2
+     * adds 'million', etc.
+     *
+     * @param int $n The up to 3-digit number
+     * @param bool $big Indicates whether total number is 3 or more digits
+     * @param int $suffix Indicates which 10^3 we are at
+     */
     public function singleNumberHundreds($n, $big, $suffix)
     {
-        /**
-         * This function is responsible for returning the count of any 3-digit
-         * number letter total, with a given suffix degree. Suffix degree 0
-         * adds nothing to each total, but adds 'and' between hundreds (if
-         * present) and last two digits. Suffix degree 1 adds 'thousand', 2
-         * adds 'million', etc.
-         *
-         * First, build the arrays that have the corresponding letter counts
-         *
-         * $onesTens starts at 'one' and goes through 'nineteen', by 1s
-         * (position in array is value - 1)
-         *
-         * $tenNinety starts at 'ten' and goes through 'ninety', by 10s
-         * (position in array is tens digit - 1)
-         *
-         * $suffixes represent something added to each number (e.g., 'billion')
-         */
-
         if ($n === 0) {
             return 0;
         }
@@ -91,8 +100,7 @@ class E017NumberLetterCounts
                 continue;
             }
 
-            // If 0 in ones place, nothing needed from $ones (<20 and 100s
-            // handled above)
+            // If 0 in ones place, nothing needed from ONES (<20 and 100s handled above)
             if ($j === 0 && $nAsRevString[$j] == 0) {
                 if ($suffix === 0 && $big) {
                     $ret += 3;
@@ -123,7 +131,7 @@ class E017NumberLetterCounts
 }
 
 if (! count(debug_backtrace())) {
-    $eulerNum = 1000;  // 1000
+    $eulerNum = 1000;
     $p = new E017NumberLetterCounts();
     echo "Sum of letters of the written numbers from 1 to {$eulerNum}" .
              " = {$p->numberLetterCounts($eulerNum)}\n";
