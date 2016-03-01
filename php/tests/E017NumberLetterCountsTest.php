@@ -13,10 +13,13 @@ class NumberLetterCountsTest extends PHPUnit_Framework_TestCase
      */
     public function testNumberLetterCounts($n, $expectedSum)
     {
+        // Arrange
         $euler = new Euler\E017NumberLetterCounts();
 
+        // Act
         $result = $euler->numberLetterCounts($n);
 
+        // Assert
         $this->assertEquals($result, $expectedSum);
     }
 

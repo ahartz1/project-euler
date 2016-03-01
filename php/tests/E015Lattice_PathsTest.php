@@ -13,10 +13,13 @@ class NumLatticePathsTest extends PHPUnit_Framework_TestCase
      */
     public function testE015Lattice_Paths($gWidth, $gHeight, $expectedNumPaths)
     {
+        // Arrange
         $euler = new Euler\E015Lattice_Paths();
 
+        // Act
         $result = $euler->numLatticePaths($gWidth, $gHeight);
 
+        // Assert
         $this->assertEquals($result, $expectedNumPaths);
     }
 
