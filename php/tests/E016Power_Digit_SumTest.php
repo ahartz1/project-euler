@@ -4,30 +4,30 @@
 
 class PowerDigitSumTest extends PHPUnit_Framework_TestCase
 {
-    protected $p;
-
-    protected function setUp() {
-        $this->p = new Euler\E016Power_Digit_Sum();
-    }
-
-    public function test2ToThe4() {
-        // Arrange (taken care of in setUp)
-
-        // Act
-        $sum = $this->p->powerDigitSum(4);
-
-        // Assert
-        $this->assertEquals(7, $sum);
-    }
-
-    public function test2ToThe15() {
-        // Arrange (taken care of in setUp)
+    /**
+     * @param int $n The power of 2 of which to sum digits
+     * @param int $expectedSum The expected sum of digits
+     *
+     * @dataProvider providerTestPowerDigitSum
+     */
+    public function testPowerDigitSum($n, $expectedSum)
+    {
+        // Arrange
+        $euler = new Euler\E016Power_Digit_Sum();
 
         // Act
-        $sum = $this->p->powerDigitSum(15);
+        $sum = $euler->powerDigitSum($n);
 
         // Assert
-        $this->assertEquals(26, $sum);
+        $this->assertEquals($sum, $expectedSum);
+    }
+
+    public function providerTestPowerDigitSum()
+    {
+        return array(
+            array(4,  7),
+            array(15, 26)
+        );
     }
 }
 
