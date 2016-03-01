@@ -18,7 +18,7 @@ class E017NumberLetterCounts
      * ONES starts at 'one' and goes through 'nineteen', by 1s
      * (position in array is value - 1)
      *
-     * TENNINETY starts at 'ten' and goes through 'ninety', by 10s
+     * TEN_NINETY starts at 'ten' and goes through 'ninety', by 10s
      * (position in array is tens digit - 1)
      *
      * SUFFIXES represent something added to each number (e.g., 'billion')
