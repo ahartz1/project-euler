@@ -1,9 +1,9 @@
 /*jshint esversion: 6 */
 
 ;(function() {
-  exports.largeSum = largeSum;
+	exports.largeSum = largeSum;
 
-  const EULER_NUMS = `
+	const EULER_NUMS = `
 37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538
 74324986199524741059474233309513058123726617309629
@@ -105,32 +105,33 @@
 20849603980134001723930671666823555245252804609722
 53503534226472524250874054075591789781264330331690`;
 
-  function largeSum(raw_nums) {
-    // Return the first 10 digits of the sum
+	function largeSum(raw_nums) {
+		// Return the first 10 digits of the sum
 
-    // Start by parsing each number into an array
-    var rawNumArray = raw_nums.split('\n');
-    
-    // Then sum all non-empty elements
-    sum = 0;
-    for (var num in rawNumArray) {
-      if (rawNumArray[num]) {
-        sum += parseInt(rawNumArray[num]);
-      }
-    }
+		// Start by parsing each number into an array
+		var rawNumArray = raw_nums.split('\n');
 
-    // If the number is in scientific notation, we need to remove the decimal
-    // (JavaScript will just return the entire string if the requested substring
-    // is longer)
-    sum = sum.toString().substr(0, 11).replace('.', '');
+		// Then sum all non-empty elements
+		sum = 0;
+		for (var num in rawNumArray) {
+			if (rawNumArray[num]) {
+				sum += parseInt(rawNumArray[num]);
+			}
+		}
 
-    // If there was no decimal, trim to 10 digits
-    if (sum.length === 11) { sum = sum.substr(0, 10); }
+		// If the number is in scientific notation, we need to remove the decimal
+		// (JavaScript will just return the entire string if the requested substring
+		// is longer)
+		sum = sum.toString().substr(0, 11).replace('.', '');
 
-    return parseInt(sum);
-  }  // end of largeSum
+		// If there was no decimal, trim to 10 digits
+		if (sum.length === 11) { sum = sum.substr(0, 10); }
+
+		return parseInt(sum);
+	}  // end of largeSum
+
+	if (require.main === module) {
+		console.log(largeSum(EULER_NUMS));
+	}
 })();
 
-if (require.main === module) {
-  console.log(largeSum(EULER_NUMS));
-}
