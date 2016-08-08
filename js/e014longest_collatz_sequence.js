@@ -12,7 +12,7 @@
 				currNum = n;
 		while (currNum != 1) {
 			// currNum is even
-			if (currNum % 2 === 0) {  
+			if (currNum % 2 === 0) {
 				currNum /= 2;
 				count++;
 			}
