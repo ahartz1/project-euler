@@ -28,10 +28,10 @@ class E015Lattice_Paths
          }
 
          // Check to see if answer is already in class dictionary
-         if (key_exists($width . $height, $this->pathHolder)) {
-             return $this->pathHolder[$width . $height];
-         } elseif (key_exists($height . $width, $this->pathHolder)) {
-             return $this->pathHolder[$height . $width];
+         if (key_exists($width.'x'.$height, $this->pathHolder)) {
+             return $this->pathHolder[$width.'x'.$height];
+         } elseif (key_exists($height.'x'.$width, $this->pathHolder)) {
+             return $this->pathHolder[$height.'x'.$width];
          }
     
          // Recursive case: reduce by one column and sum resulting grids
@@ -42,7 +42,7 @@ class E015Lattice_Paths
          }
     
          // Save result into dictionary for future calls
-         $this->pathHolder[$width . $height] = $ret;
+         $this->pathHolder[$width.'x'.$height] = $ret;
          return $ret;
     }
 }
