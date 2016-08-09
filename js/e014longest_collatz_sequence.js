@@ -18,7 +18,7 @@
 			}
 
 			// currNum is odd
-			else { 
+			else {
 				currNum = (currNum * 3) + 1;
 				count++;
 			}
@@ -43,7 +43,7 @@
 			}
 		}
 
-		return ret
+		return ret;
 	}  // end of longestCollatzSequence
 
 	if (require.main === module) {

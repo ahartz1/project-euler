@@ -29,7 +29,7 @@
 	}  // end of triangularDivisors
 
 	if (require.main === module) {
-		console.log('For n of 500, answer = 76576500 (took ~30 min to calculate!)')
+		console.log('For n of 500, answer = 76576500 (took ~30 min to calculate!)');
 	}
 })();
 
