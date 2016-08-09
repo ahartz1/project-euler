@@ -9,12 +9,12 @@ class NumLatticePathsTest extends PHPUnit_Framework_TestCase
      * @param int $gHeight Height of grid
      * @param int $expectedNumPaths Expected number of resulting lattice paths
      *
-     * @dataProvider providerTestE015Lattice_Paths
+     * @dataProvider providerTestE015LatticePaths
      */
-    public function testE015Lattice_Paths($gWidth, $gHeight, $expectedNumPaths)
+    public function testE015LatticePaths($gWidth, $gHeight, $expectedNumPaths)
     {
         // Arrange
-        $euler = new Euler\E015Lattice_Paths();
+        $euler = new Euler\E015LatticePaths();
 
         // Act
         $result = $euler->numLatticePaths($gWidth, $gHeight);
@@ -23,7 +23,7 @@ class NumLatticePathsTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($result, $expectedNumPaths);
     }
 
-    public function providerTestE015Lattice_Paths()
+    public function providerTestE015LatticePaths()
     {
         return array(
             array(2, 2, 6),

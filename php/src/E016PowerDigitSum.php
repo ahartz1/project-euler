@@ -7,7 +7,7 @@
 
 namespace Euler;
 
-class E016Power_Digit_Sum
+class E016PowerDigitSum
 {
     public function powerDigitSum($n) {
         $pow = bcpow(2, $n);
@@ -23,7 +23,7 @@ class E016Power_Digit_Sum
 if (!count(debug_backtrace())) {
     $eulerNum = 1000;
     $eulerPow = pow(2, $eulerNum);
-    $p = new E016Power_Digit_Sum();
+    $p = new E016PowerDigitSum();
     echo "2^{$eulerNum} = {$eulerPow}\n";
     echo "Sum of digits = {$p->powerDigitSum($eulerNum)}\n";
 }

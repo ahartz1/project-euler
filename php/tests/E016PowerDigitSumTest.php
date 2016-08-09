@@ -13,7 +13,7 @@ class PowerDigitSumTest extends PHPUnit_Framework_TestCase
     public function testPowerDigitSum($n, $expectedSum)
     {
         // Arrange
-        $euler = new Euler\E016Power_Digit_Sum();
+        $euler = new Euler\E016PowerDigitSum();
 
         // Act
         $sum = $euler->powerDigitSum($n);

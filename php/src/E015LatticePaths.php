@@ -5,7 +5,7 @@
 
 namespace Euler;
 
-class E015Lattice_Paths
+class E015LatticePaths
 {
     public $pathHolder = array();
 
@@ -50,7 +50,7 @@ class E015Lattice_Paths
 if (!count(debug_backtrace())) {
     $eulerWidth = 20;
     $eulerHeight = 20;
-    $euler = new E015Lattice_Paths();
+    $euler = new E015LatticePaths();
     echo "Number of lattice paths in " . $eulerWidth . "x" . $eulerHeight
         . " grid: " . $euler->numLatticePaths($eulerWidth, $eulerHeight) . "\n";
 }
