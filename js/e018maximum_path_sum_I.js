@@ -70,8 +70,8 @@
 
 		// Update an existing entry to include the current number
 		var updateEntry = function(entry, value, index) {
-			paths[index].sum = entry.sum + parseInt(value);
-			var tempPath     = JSON.parse(JSON.stringify(entry.path));
+			paths[index].sum  = entry.sum + parseInt(value);
+			var tempPath      = JSON.parse(JSON.stringify(entry.path));
 			tempPath.push(parseInt(value));
 			paths[index].path = tempPath;
 		};
@@ -88,10 +88,10 @@
 				continue;
 			}
 			// Make a deep copy of the existing paths to compare against while
-			// we change paths
+			// we change `paths`
 			pathsCopy = JSON.parse(JSON.stringify(paths));
 			for (var j = 0; j < rows[i].length; j++) {
-				// Compare at sum at position - 1 and position in row above
+				// Compare sum at position - 1 and position - 0 in row above
 				var posA = (typeof pathsCopy[j - 1] != 'undefined') ? pathsCopy[j - 1] : 0;
 				var posB = (typeof pathsCopy[j]     != 'undefined') ? pathsCopy[j]     : 0;
 				
