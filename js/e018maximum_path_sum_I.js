@@ -1,5 +1,5 @@
 /**
- * Project Euler Problem #17: Maximum Path Sum I
+ * Project Euler Problem #18: Maximum Path Sum I
  *
  * The goal here is to find the largest possible sum along a path of numbers
  * arranged into a triangular array.
@@ -32,11 +32,11 @@
 	 * position, but do not have to maintain all of the paths. We can always
 	 * look at the current row and know the maximum sum.
 	 *
-	 * In the below, the index in main array represents position within a row
-	 * and the index in path array represents the row 
+	 * In the below, the index in the main array represents the position within
+	 * a row and the index in the `path` array represents the row
 	 *
 	 * Data structure at row[2]:
-	 * [
+	 *	[
 	 *		{'sum': 12, 'path': [3, 7, 2]},
 	 *		{'sum': 14, 'path': [3, 7, 4]},
 	 *		{'sum': 13, 'path': [3, 4, 6]}
