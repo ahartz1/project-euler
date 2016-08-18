@@ -8,7 +8,7 @@
  * (1) 1/1/1900 was a Monday
  * (2) Months with 30 days: April, June, September, November
  *     Months with 31 days: January, March, May, July, August, October, December
- *     February has 28 days unless it is a leap year.
+ *     February has 28 days unless it is a leap year, when it has 29.
  * (3) Leap years: Any year divisible by 4, but not on a century unless divisible by 400
  */
 
@@ -59,7 +59,7 @@
 	function countingSundays(startDate, endDate) {
 		var numSundays     = 0;
 		var totalDays      = 0;
-		var monthDurations = 0;
+		var monthDurations = [];
 		for (var i = 1900; i <= endDate.getFullYear(); i++) {
 			if (i < startDate.getFullYear()) {
 				// Count the days between 1900 and the current year
