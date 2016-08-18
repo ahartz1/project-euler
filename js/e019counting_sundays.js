@@ -61,12 +61,12 @@
 		var totalDays      = 0;
 		var monthDurations = [];
 		for (var i = 1900; i <= endDate.getFullYear(); i++) {
+			monthDurations = getMonthDurations(i);
 			if (i < startDate.getFullYear()) {
 				// Count the days between 1900 and the current year
-				totalDays += getMonthDurations(i).reduce(add, 0);
+				totalDays += monthDurations.reduce(add, 0);
 				continue;
 			}
-			monthDurations = getMonthDurations(i);
 			for (var j = 0; j < monthDurations.length; j++) {
 				if ((i === startDate.getFullYear() && j < startDate.getMonth()) ||
 					(i === endDate.getFullYear() && j > endDate.getMonth())) {
