@@ -17,11 +17,14 @@ test('divisorSum', function() {
 
 test('isAmicable', function() {
 	expect(main.isAmicable).is.a('function');
-	expect(main.isAmicable(220)).is.deep.equal(284);
+	expect(main.isAmicable(220)).is.deep.equal(true);
+	expect(main.isAmicable(221)).is.deep.equal(false);
 });
 
 test('amicableNumberSum', function() {
 	expect(main.amicableNumberSum).is.a('function');
+	expect(main.amicableNumberSum(220)).is.deep.equal(0);
+	expect(main.amicableNumberSum(221)).is.deep.equal(220);
 	expect(main.amicableNumberSum(285)).is.deep.equal(504);
 });
 

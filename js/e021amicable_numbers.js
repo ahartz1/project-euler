@@ -32,17 +32,16 @@
 	}
 
 	/**
-	 * If the input number is a part of an amicable pair, return its pair.
-	 * Otherwise, return false.
+	 * Is the input number part of an amicable pair?
 	 * 
 	 * @param {number} a
 	 *
-	 * @return {number|boolean}
+	 * @return {boolean}
 	 */
 	function isAmicable(a) {
 		var b = divisorSum(a);
 		if (a === divisorSum(b) && a !== b) {
-			return b;
+			return true;
 		}
 		return false;
 	}
@@ -56,10 +55,8 @@
 	 */
 	function amicableNumberSum(n) {
 		var amicableSum = 0;
-		var candidate = 0;
 		for (var i = 1; i < n; i++) {
-			candidate = isAmicable(i);
-			if (candidate !== false) {
+			if (isAmicable(i)) {
 				amicableSum += i;
 			}
 		}
