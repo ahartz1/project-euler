@@ -43,9 +43,10 @@
 	 * @return {number}
 	 */
 	function alphabeticalSum(word) {
-		var sum = 0;
 		// Make word lowercase with no extra surrounding whitespace
 		word = word.toLowerCase().trim();
+
+		var sum = 0;
 		for (var i = 0; i < word.length; i++) {
 			// The lowercase latin alphabet starts at 97 in unicode, so
 			// subtract 96 to get value
