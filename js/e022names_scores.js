@@ -44,7 +44,7 @@
 	 */
 	function alphabeticalSum(word) {
 		var sum = 0;
-		// Make word lower case with no extra surrounding whitespace
+		// Make word lowercase with no extra surrounding whitespace
 		word = word.toLowerCase().trim();
 		for (var i = 0; i < word.length; i++) {
 			// The lowercase latin alphabet starts at 97 in unicode, so
