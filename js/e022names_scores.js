@@ -44,6 +44,8 @@
 	 */
 	function alphabeticalSum(word) {
 		var sum = 0;
+		// Make word lower case with no extra surrounding whitespace
+		word = word.toLowerCase().trim();
 		for (var i = 0; i < word.length; i++) {
 			// The lowercase latin alphabet starts at 97 in unicode, so
 			// subtract 96 to get value
@@ -66,8 +68,7 @@
 		var sum     = 0;
 		var nameSum = 0;
 		for (var i = 0; i < nameList.length; i++) {
-			// Get alphabetical sum of lowercase, trimmed version of name
-			nameSum = alphabeticalSum(nameList[i].toLowerCase().trim());
+			nameSum = alphabeticalSum(nameList[i]);
 
 			// Multiply the alphabetical sum by the name's position in the list
 			sum += nameSum * (i + 1);
