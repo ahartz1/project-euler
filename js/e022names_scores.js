@@ -1,9 +1,9 @@
 /**
  * Project Euler Problem #22: Names Scores
  *
- * Reading in the names in the file, alphabetize them. Calculate the
- * alphabetical value of each name and multiply it by its position in the name
- * list. Return the sum of these values.
+ * Read in the names in the file, alphabetize them. Calculate the alphabetical
+ * value of each name and multiply it by its position in the name list. Return
+ * the sum of these values.
  */
 
 ;(function(){
@@ -29,7 +29,7 @@
 		// Parse names
 		var names = contents.split(',');
 		for (var i = 0; i < names.length; i++) {
-			// Names are surrounded by quotes; remove them
+			// Remove quotes surrounding names
 			nameList[i] = names[i].replace(/"/g, '');
 		}
 		return nameList.sort();
@@ -44,10 +44,10 @@
 	 */
 	function alphabeticalSum(word) {
 		var sum = 0;
-		for (var j = 0; j < word.length; j++) {
+		for (var i = 0; i < word.length; i++) {
 			// The lowercase latin alphabet starts at 97 in unicode, so
 			// subtract 96 to get value
-			sum += word.charCodeAt(j) - 96;
+			sum += word.charCodeAt(i) - 96;
 		}
 		return sum;
 	}
