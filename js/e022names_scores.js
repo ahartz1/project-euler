@@ -25,7 +25,9 @@
 
 		// Get access to the file contents
 		var contents = fs.readFileSync(filepath, 'utf8');
-		var names    = contents.split(',');
+
+		// Parse names
+		var names = contents.split(',');
 		for (var i = 0; i < names.length; i++) {
 			// Names are surrounded by quotes; remove them
 			nameList[i] = names[i].replace(/"/g, '');
@@ -58,11 +60,16 @@
 	 * @return {number}
 	 */
 	function namesScoresSum(filepath) {
+		// Get sorted names array from file
 		var nameList = processNamesFile(filepath);
-		var sum      = 0;
-		var nameSum  = 0;
+
+		var sum     = 0;
+		var nameSum = 0;
 		for (var i = 0; i < nameList.length; i++) {
+			// Get alphabetical sum of lowercase, trimmed version of name
 			nameSum = alphabeticalSum(nameList[i].toLowerCase().trim());
+
+			// Multiply the alphabetical sum by the name's position in the list
 			sum += nameSum * (i + 1);
 		}
 		return sum;
