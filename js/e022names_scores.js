@@ -18,16 +18,15 @@
 	 * @return {Array.<string>}
 	 */
 	function processNamesFile(filepath) {
-		var nameList = [];
-
 		// Get access to FileSystem functions with fs
 		var fs = require('fs');
 
-		// Get access to the file contents
+		// Retrieve file contents
 		var contents = fs.readFileSync(filepath, 'utf8');
 
 		// Parse names
-		var names = contents.split(',');
+		var nameList = [];
+		var names    = contents.split(',');
 		for (var i = 0; i < names.length; i++) {
 			// Remove quotes surrounding names
 			nameList[i] = names[i].replace(/"/g, '');
