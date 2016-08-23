@@ -68,6 +68,7 @@
 						addToSum = false;
 						stopSearch = true;
 						sumOfAbundant.push(i);
+						break;
 					}
 				}
 				if (stopSearch) {
