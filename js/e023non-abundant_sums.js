@@ -90,9 +90,9 @@
 		// of abundant numbers
 		if (max === 28123) {
 			var consecutive = [];
-			for (var l = sumOfAbundant.length - 1; l > 0; l--) {
+			for (var l = sumOfAbundant.length - 1; l > 1; l--) {
 				if (sumOfAbundant[l] === sumOfAbundant[l - 1] + 1) {
-					consecutive.unshift(sumOfAbundant[l]);	
+					consecutive.unshift(sumOfAbundant[l - 1]);
 				} else {
 					break;
 				}
