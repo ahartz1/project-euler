@@ -51,7 +51,7 @@
 		var sumOfAbundant = [];
 		var stopSearch    = false;
 		max = max || 28123;
-		max = 0 < max < 28123 ? max : 28123;
+		max = 0 < max ? max : 28123;
 		for (var i = 0; i <= max; i++) {
 			addToSum = true;
 			for (var j = 0; j < abundantList.length - 1; j++) {
@@ -88,7 +88,7 @@
 
 		// Let's find the actual beginning of consecutive numbers that are sums
 		// of abundant numbers
-		if (max === 28123) {
+		if (max >= 28123 && showConsecutiveStart) {
 			var consecutive = [];
 			for (var l = sumOfAbundant.length - 1; l > 1; l--) {
 				if (sumOfAbundant[l] === sumOfAbundant[l - 1] + 1) {
@@ -97,9 +97,7 @@
 					break;
 				}
 			}
-			if (showConsecutiveStart) {
-				console.log('The beginning of consecutive numbers that are sums of abundant numbers: '+consecutive[0]);
-			}
+			console.log('The beginning of consecutive numbers that are sums of abundant numbers: '+consecutive[0]);
 		}
 		return sum;
 	}
