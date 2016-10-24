@@ -13,8 +13,8 @@ class NumberOutOfRangeError(Exception):
 
 def fibonacci_x_digits_index(num_digits):
     """Return the index of the first Fibonacci number with `num_digits`"""
-    if num_digits < 1:
-        raise NumberOutOfRangeError('Must specify number larger than 1')
+    if num_digits < 1 or num_digits % 1 != 0:
+        raise NumberOutOfRangeError('Must specify integer larger than 1')
 
     lastnum = 1
     currnum = 1
