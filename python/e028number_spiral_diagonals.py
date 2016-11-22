@@ -19,26 +19,47 @@ From the description:
 """
 
 from __future__ import (absolute_import, print_function)
-#  from ensure_integer import ensure_integer
+from ensure_integer import ensure_integer
 
 
-def spiral_diagonal_sum(edge_length=1001):
+class NonOddInputError(Exception):
+    pass
+
+
+def spiral_diagonals_sum(edge_length=1001):
     """
     Return sum of spiral diagonals
 
-    Arg:
+    Args:
         edge_length (int): The length of the outside edge of the spiral (odd).
 
     Returns:
         Sum of spiral diagonals.
-
-    Note: This takes a long time to run!
     """
 
-    pass
+    ensure_integer(edge_length, var_name='edge_length')
+    if edge_length % 2 == 0:
+        raise NonOddInputError('edge_length must be odd')
+
+    spiral_edge = 1
+    spiral_corners = [1, ]
+    while spiral_edge < edge_length:
+        # Next odd edge length
+        spiral_edge += 2
+
+        # Top right corner is square of spiral_edge
+        temp_corner = spiral_edge ** 2
+        spiral_corners.append(temp_corner)
+        for _ in range(3):
+            # Other corners can be calculated by subtracting spiral_edge - 1
+            # from the previous corner value
+            temp_corner -= (spiral_edge - 1)
+            spiral_corners.append(temp_corner)
+
+    return sum(spiral_corners)
 
 
 if __name__ == '__main__':
     edge_length = 1001
     print('Spiral Diagonal Sum for spiral of edge length'
-          ' {}: {}'.format(edge_length, spiral_diagonal_sum(edge_length)))
+          ' {}: {}'.format(edge_length, spiral_diagonals_sum(edge_length)))

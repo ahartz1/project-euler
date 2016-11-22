@@ -9,7 +9,7 @@ class NotPositiveIntegerError(Exception):
     pass
 
 
-def ensure_integer(n, greater_than=0, n_name="Input"):
+def ensure_integer(n, greater_than=0, var_name="Input"):
     """
     Return True if n is a positive integer, else raise NotPositiveIntegerError
 
@@ -27,6 +27,6 @@ def ensure_integer(n, greater_than=0, n_name="Input"):
 
     if n % 1 != 0 or n <= greater_than:
         raise NotPositiveIntegerError(
-            n_name + ' must be an integer greater than ' +
+            var_name + ' must be an integer greater than ' +
             str(greater_than))
     return True
