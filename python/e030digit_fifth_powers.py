@@ -50,6 +50,9 @@ def is_digit_powers(n, power=5):
         to n.
     """
 
+    ensure_integer(n)
+    ensure_integer(power)
+
     power_sum = 0
     terms = list(str(n))
     for term in terms:
